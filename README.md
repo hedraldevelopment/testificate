@@ -65,7 +65,12 @@ If you dont want tests to run automatically, you can explicitly prevent this in 
 example_object = exampleTest(run_immediate=False)
 example_object.run_tests()
 ```
-This example results in the following:
+### Displaying the tests:
+To display the tests, just print the object
+```
+example_object=example()
+print(example_object)
+```
 ```
 Ran 1 tests in 0.011 seconds...
 ------------------
