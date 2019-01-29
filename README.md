@@ -30,6 +30,16 @@ Thats it!
 
 How to get started running tests
 
+### Types of tests ###
+ There are currently 2 types of tests:
+ ```
+ assert_equals(item1, item2)
+ ```
+ and
+ ```
+ assert_contains(item, item_list)
+ ```
+
 ### Creating a testing node
 
 Tests are all run from within a TestNode class, specifically your own custom class than inherits from testificate.TestNode
@@ -46,7 +56,7 @@ When the class is instantiated, all these functions will automatically be called
 
 ```
 class exampleTest(testificate.TestNode):
-  test_hello():
+  def test_hello(self):
     self.assert_equals(1,2)
 ```
 
@@ -55,30 +65,25 @@ If you dont want tests to run automatically, you can explicitly prevent this in 
 example_object = exampleTest(run_immediate=False)
 example_object.run_tests()
 ```
+This example results in the following:
+```
+Ran 1 tests in 0.011 seconds...
+------------------
+Passed: 0
+Failed: 1
+------------------
+FAILED : test_hello ~ EQUALS -> testing.py at line 14
+```
 
-## Deployment
+## Other projects
 
-Add additional notes about how to deploy this on a live system
+* [hedral](http://www.hedral.info/portfolio/apps) - All my other projects
 
-## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **James Clarke** - *...Everything*
 
 ## License
 
@@ -86,6 +91,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* thanks to stack overflow... couldn't have done it without you
