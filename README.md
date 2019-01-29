@@ -48,6 +48,12 @@ Tests are all run from within a TestNode class, specifically your own custom cla
 class exampleTest(testificate.TestNode):
   ...
 ```
+You can run all setup code in the setup function that will automatically be called in the constructor of TestNode
+```
+class exampleTest(testificate.TestNode):
+  def setup(self):
+   ...
+```
 
 ### Definining testing functions
 
